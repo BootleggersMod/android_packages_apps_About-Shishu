@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.helpers;
+package org.eldainosor.about.helpers;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -33,21 +33,24 @@ public class Util implements Serializable {
     @SerializedName("card_avatar")
     private String cardAvatar = null;
 
-    @SerializedName("device_name_one")
-    private String deviceNameOne;
-    @SerializedName("device_name_two")
-    private String deviceNameTwo;
-    @SerializedName("device_image_one")
-    private String deviceImageOne = null;
-    @SerializedName("device_image_two")
-    private String deviceImageTwo = null;
-
     @SerializedName("google_plus")
     private String googlePlus = null;
     @SerializedName("twitter")
     private String twitter = null;
     @SerializedName("github")
     private String github = null;
+    @SerializedName("headl")
+    private String headl = null;
+    @SerializedName("song")
+    private String song = null;
+    @SerializedName("spotify")
+    private String spotify = null;
+    @SerializedName("telegram")
+    private String telegram = null;
+    @SerializedName("youtube")
+    private String youtube = null;
+    @SerializedName("wallpapers")
+    private String wallpapers = null;
 
     private Util uri;
 
@@ -68,19 +71,6 @@ public class Util implements Serializable {
         return cardAvatar;
     }
 
-    public String getDeviceNameOne() {
-        return deviceNameOne;
-    }
-    public String getDeviceNameTwo() {
-        return deviceNameTwo;
-    }
-    public String getDeviceImageOne() {
-        return deviceImageOne;
-    }
-    public String getDeviceImageTwo() {
-        return deviceImageTwo;
-    }
-
     public String getGooglePlus() {
         return googlePlus;
     }
@@ -89,6 +79,24 @@ public class Util implements Serializable {
     }
     public String getGithub() {
         return github;
+    }
+    public String getHeaDL() {
+        return headl;
+    }
+    public String getSong() {
+        return song;
+    }
+    public String getSpotify() {
+        return spotify;
+    }
+    public String getTelegram() {
+        return telegram;
+    }
+    public String getYoutube() {
+        return youtube;
+    }
+    public String getWallpapers() {
+        return wallpapers;
     }
 
     public Util(Util uri) {

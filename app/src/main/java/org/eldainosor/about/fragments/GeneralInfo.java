@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.fragments;
+package org.eldainosor.about.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -25,7 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.dirtyunicorns.about.R;
+import org.eldainosor.about.R;
 
 public class GeneralInfo extends PreferenceFragmentCompat {
 
@@ -42,14 +42,6 @@ public class GeneralInfo extends PreferenceFragmentCompat {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        ImageView googleplus = (ImageView) rootView.findViewById(R.id.google_plus);
-        googleplus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent googleplus = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.google_plus_link)));
-                startActivity(googleplus);
-            }
-        });
         ImageView github = (ImageView) rootView.findViewById(R.id.github);
         github.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,14 +50,23 @@ public class GeneralInfo extends PreferenceFragmentCompat {
                 startActivity(github);
             }
         });
-        ImageView twitter = (ImageView) rootView.findViewById(R.id.twitter);
-        twitter.setOnClickListener(new View.OnClickListener() {
+        ImageView headl = (ImageView) rootView.findViewById(R.id.headl);
+        headl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent twitter = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.twitter_link)));
-                startActivity(twitter);
+                Intent headl = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.headl_link)));
+                startActivity(headl);
             }
         });
+        ImageView wallpapers = (ImageView) rootView.findViewById(R.id.wallpapers);
+        wallpapers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent wallpapers = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.wallpapers_link)));
+                startActivity(wallpapers);
+            }
+        });
+
 
         return rootView;
     }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.helpers;
+package org.eldainosor.about.helpers;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

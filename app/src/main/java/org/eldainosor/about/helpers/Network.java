@@ -14,25 +14,17 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.fragments;
+package org.eldainosor.about.helpers;
 
-import android.os.Bundle;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
-import com.dirtyunicorns.about.helpers.Downloader;
-import com.dirtyunicorns.about.helpers.Util;
+public class Network {
 
-import java.util.List;
-
-import retrofit2.Call;
-
-public class Devices extends com.dirtyunicorns.about.abstracts.Devices {
-
-    @Override
-    public Call<List<Util>> getDevicesCall() {
-        return Downloader.getDevicesApi().getDevices();
-    }
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    public static boolean isConnected(Context context){
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 }

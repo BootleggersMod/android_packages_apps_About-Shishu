@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.adapters;
+package org.eldainosor.about.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -24,28 +24,29 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dirtyunicorns.about.R;
-import com.dirtyunicorns.about.helpers.Util;
+import org.eldainosor.about.R;
+import org.eldainosor.about.helpers.CircleTransform;
+import org.eldainosor.about.helpers.Util;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class Devices extends RecyclerView.Adapter<Devices.ViewHolder> {
+public class Developers extends RecyclerView.Adapter<Developers.ViewHolder> {
 
     private List<Util> developers;
     Context context;
     Util devcards;
 
-    public Devices(List<Util> developers) {
+    public Developers(List<Util> developers) {
         this.developers = developers;
     }
 
     @Override
-    public Devices.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Developers.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View developersView = inflater.inflate(R.layout.fragment_devices, parent, false);
+        View developersView = inflater.inflate(R.layout.fragment_developers, parent, false);
         return new ViewHolder(developersView);
     }
 
@@ -54,17 +55,20 @@ public class Devices extends RecyclerView.Adapter<Devices.ViewHolder> {
 
         devcards = developers.get(position);
 
-        ImageView deviceImageOne = holder.deviceImageOne;
-        Picasso.with(context).load(devcards.getUri().getDeviceImageOne()).into(deviceImageOne);
+        ImageView cb = holder.background;
+        Picasso.with(context).load(devcards.getUri().getCardBackground()).into(cb);
 
-        ImageView deviceImageTwo = holder.deviceImageTwo;
-        Picasso.with(context).load(devcards.getUri().getDeviceImageTwo()).into(deviceImageTwo);
+        ImageView ca = holder.avatar;
+        Picasso.with(context).load(devcards.getAvatar().getCardAvatar()).transform(new CircleTransform()).into(ca);
 
-        TextView deviceNameOne = holder.deviceNameOne;
-        deviceNameOne.setText(devcards.getDeviceNameOne());
+        TextView dev_name = holder.dev_name;
+        dev_name.setText(devcards.getDevName());
 
-        TextView deviceNameTwo = holder.deviceNameTwo;
-        deviceNameTwo.setText(devcards.getDeviceNameTwo());
+        TextView dev_title = holder.dev_title;
+        dev_title.setText(devcards.getDevTitle());
+
+        TextView dev_devices = holder.dev_devices;
+        dev_devices.setText(devcards.getDevDevices());
     }
 
     @Override
@@ -74,20 +78,21 @@ public class Devices extends RecyclerView.Adapter<Devices.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView deviceImageOne;
-        public ImageView deviceImageTwo;
-
-        public TextView deviceNameOne;
-        public TextView deviceNameTwo;
+        public ImageView background;
+        public ImageView avatar;
+        public TextView dev_name;
+        public TextView dev_title;
+        public TextView dev_devices;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            deviceImageOne = (ImageView) itemView.findViewById(R.id.device_one);
-            deviceImageTwo = (ImageView) itemView.findViewById(R.id.device_two);
+            background = (ImageView) itemView.findViewById(R.id.image);
+            avatar = (ImageView) itemView.findViewById(R.id.avatar_image);
 
-            deviceNameOne = (TextView) itemView.findViewById(R.id.device_label_one);
-            deviceNameTwo = (TextView) itemView.findViewById(R.id.device_label_two);
+            dev_name = (TextView) itemView.findViewById(R.id.dev_name);
+            dev_title = (TextView) itemView.findViewById(R.id.dev_title);
+            dev_devices = (TextView) itemView.findViewById(R.id.dev_devices);
         }
     }
 }

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.helpers;
+package org.eldainosor.about.helpers;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.dirtyunicorns.about.R;
+import org.eldainosor.about.R;
 
 public class ClickUtils {
     private final RecyclerView mRecyclerView;

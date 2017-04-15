@@ -28,4 +28,46 @@
         android:src="@drawable/twitter"
         android:layout_marginStart="20dp"
         android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/headl"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/headl"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/song"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/song"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/spotify"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/spotify"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/telegram"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/telegram"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/youtube"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/youtube"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/wallpapers"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/wallpapers"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
 </LinearLayout>

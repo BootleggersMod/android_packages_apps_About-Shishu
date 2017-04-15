@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.activities;
+package org.eldainosor.about.activities;
 
 import android.content.ComponentName;
 import android.content.pm.PackageManager;
@@ -28,16 +28,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.dirtyunicorns.about.R;
-import com.dirtyunicorns.about.fragments.Developers;
-import com.dirtyunicorns.about.fragments.Devices;
-import com.dirtyunicorns.about.fragments.GeneralInfo;
-import com.dirtyunicorns.about.helpers.Network;
+import org.eldainosor.about.R;
+import org.eldainosor.about.fragments.Developers;
+import org.eldainosor.about.fragments.GeneralInfo;
+import org.eldainosor.about.helpers.Network;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+
+import static android.view.View.GONE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -66,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(getString(R.string.info)).withTextColor(getResources().getColor(R.color.nav_drawer_text)).withSelectedColor(getResources().getColor(R.color.nav_drawer_selector)).withSelectedTextColor(getResources().getColor(R.color.nav_drawer_selected_text)).withIcon(R.drawable.general_info).withIdentifier(1).withSelectable(true).withIconTintingEnabled(true).withSelectedIconColorRes(R.color.nav_drawer_icon_tint_color).withIconColorRes(R.color.nav_drawer_icon_color),
                         new PrimaryDrawerItem().withName(getString(R.string.developers_title)).withTextColor(getResources().getColor(R.color.nav_drawer_text)).withSelectedColor(getResources().getColor(R.color.nav_drawer_selector)).withSelectedTextColor(getResources().getColor(R.color.nav_drawer_selected_text)).withIcon(R.drawable.developers).withIdentifier(2).withSelectable(true).withIconTintingEnabled(true).withSelectedIconColorRes(R.color.nav_drawer_icon_tint_color).withIconColorRes(R.color.nav_drawer_icon_color),
-                        new PrimaryDrawerItem().withName(getString(R.string.device_title)).withTextColor(getResources().getColor(R.color.nav_drawer_text)).withSelectedColor(getResources().getColor(R.color.nav_drawer_selector)).withSelectedTextColor(getResources().getColor(R.color.nav_drawer_selected_text)).withIcon(R.drawable.devices).withIdentifier(3).withSelectable(true).withIconTintingEnabled(true).withSelectedIconColorRes(R.color.nav_drawer_icon_tint_color).withIconColorRes(R.color.nav_drawer_icon_color),
                         new DividerDrawerItem()
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
@@ -84,13 +84,6 @@ public class MainActivity extends AppCompatActivity {
                                 } else {
                                     snackBar();
                                 }
-                            } else if (drawerItem.getIdentifier() == 3) {
-                                if (isConnected) {
-                                    changeFragment(new Devices());
-                                    toolbar.setSubtitle(getString(R.string.device_title));
-                                } else {
-                                    snackBar();
-                                }
                             }
                         }
                         return false;
@@ -102,11 +95,10 @@ public class MainActivity extends AppCompatActivity {
         if (result != null) {
             result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
         }
-
-        Fragment fragment = new GeneralInfo();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.fragment, fragment);
-        transaction.commit();
+         Fragment fragment = new GeneralInfo();
+         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+         transaction.add(R.id.fragment, fragment);
+         transaction.commit();
     }
 
     private void changeFragment(Fragment fragment) {
