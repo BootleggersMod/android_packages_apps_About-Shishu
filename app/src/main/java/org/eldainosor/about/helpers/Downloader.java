@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.helpers;
+package org.eldainosor.about.helpers;
 
 import java.util.List;
 
@@ -27,14 +27,12 @@ public class Downloader {
 
     private static volatile DevsApi devsApi;
 
-    private static volatile DevicesApi devicesApi;
-
     public static DevsApi getDevsApi() {
         if (devsApi == null) {
             synchronized (Downloader.class) {
                 if (devsApi == null) {
                     devsApi = new Retrofit.Builder()
-                            .baseUrl("https://raw.githubusercontent.com/DirtyUnicorns/android_packages_apps_DU-About/n7x/jsons/")
+                            .baseUrl("https://gist.githubusercontent.com/eldainosor/bda8f3eeb32a1412d9458ad10520e1a2/raw/af2d0a5be73481b79202d37848027a03610ea05d/")
                             .addConverterFactory(GsonConverterFactory.create())
                             .build()
                             .create(DevsApi.class);
@@ -44,28 +42,9 @@ public class Downloader {
         return devsApi;
     }
 
-    public static DevicesApi getDevicesApi() {
-        if (devicesApi == null) {
-            synchronized (Downloader.class) {
-                if (devicesApi == null) {
-                    devicesApi = new Retrofit.Builder()
-                            .baseUrl("https://raw.githubusercontent.com/DirtyUnicorns/android_packages_apps_DU-About/n7x/jsons/")
-                            .addConverterFactory(GsonConverterFactory.create())
-                            .build()
-                            .create(DevicesApi.class);
-                }
-            }
-        }
-        return devicesApi;
-    }
-
     public interface DevsApi {
         @GET("developers.json")
         Call<List<Util>> getDevs();
     }
 
-    public interface DevicesApi {
-        @GET("devices.json")
-        Call<List<Util>> getDevices();
-    }
 }

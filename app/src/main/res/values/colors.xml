@@ -2,8 +2,8 @@
 
 <resources>
 
-    <color name="colorPrimary">#a5120a</color>
-    <color name="colorPrimaryDark">#91100a</color>
+    <color name="colorPrimary">#0a5aa5</color>
+    <color name="colorPrimaryDark">#0a4091</color>
     <color name="colorAccent">#171717</color>
     <color name="background">#f4f4f4</color>
     <color name="toolbar_title_color">#FFFFFF</color>
@@ -14,10 +14,10 @@
     <color name="nav_drawer_divider">#dadada</color>
     <color name="nav_drawer_header_text">#FFFFFF</color>
     <color name="nav_drawer_text">#171717</color>
-    <color name="nav_drawer_selected_text">#a5120a</color>
+    <color name="nav_drawer_selected_text">#0a5fa5</color>
     <color name="nav_drawer_selector">#10000000</color>
     <color name="nav_drawer_icon_color">#676767</color>
-    <color name="nav_drawer_icon_tint_color">#a5120a</color>
+    <color name="nav_drawer_icon_tint_color">#0a50a5</color>
 
     <!-- Cards -->
     <color name="general_info_background">#FFFFFF</color>

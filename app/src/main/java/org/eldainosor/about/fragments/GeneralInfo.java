@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.fragments;
+package org.eldainosor.about.fragments;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -25,7 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.dirtyunicorns.about.R;
+import org.eldainosor.about.R;
 
 public class GeneralInfo extends PreferenceFragmentCompat {
 
@@ -66,6 +66,55 @@ public class GeneralInfo extends PreferenceFragmentCompat {
                 startActivity(twitter);
             }
         });
+        ImageView headl = (ImageView) rootView.findViewById(R.id.headl);
+        headl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent headl = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.headl_link)));
+                startActivity(headl);
+            }
+        });
+        ImageView song = (ImageView) rootView.findViewById(R.id.song);
+        song.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent song = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.song_link)));
+                startActivity(song);
+            }
+        });
+        ImageView spotify = (ImageView) rootView.findViewById(R.id.spotify);
+        spotify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent spotify = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.spotify_link)));
+                startActivity(spotify);
+            }
+        });
+        ImageView telegram = (ImageView) rootView.findViewById(R.id.telegram);
+        telegram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent telegram = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.telegram_link)));
+                startActivity(telegram);
+            }
+        });
+        ImageView youtube = (ImageView) rootView.findViewById(R.id.youtube);
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent youtube = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.youtube_link)));
+                startActivity(youtube);
+            }
+        });
+        ImageView wallpapers = (ImageView) rootView.findViewById(R.id.wallpapers);
+        wallpapers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent wallpapers = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.wallpapers_link)));
+                startActivity(wallpapers);
+            }
+        });
+
 
         return rootView;
     }

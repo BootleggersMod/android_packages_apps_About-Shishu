@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.helpers;
+package org.eldainosor.about.helpers;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -48,6 +48,18 @@ public class Util implements Serializable {
     private String twitter = null;
     @SerializedName("github")
     private String github = null;
+    @SerializedName("headl")
+    private String headl = null;
+    @SerializedName("song")
+    private String song = null;
+    @SerializedName("spotify")
+    private String spotify = null;
+    @SerializedName("telegram")
+    private String telegram = null;
+    @SerializedName("youtube")
+    private String youtube = null;
+    @SerializedName("wallpapers")
+    private String wallpapers = null;
 
     private Util uri;
 
@@ -89,6 +101,24 @@ public class Util implements Serializable {
     }
     public String getGithub() {
         return github;
+    }
+    public String getHeaDL() {
+        return headl;
+    }
+    public String getSong() {
+        return song;
+    }
+    public String getSpotify() {
+        return spotify;
+    }
+    public String getTelegram() {
+        return telegram;
+    }
+    public String getYoutube() {
+        return youtube;
+    }
+    public String getWallpapers() {
+        return wallpapers;
     }
 
     public Util(Util uri) {

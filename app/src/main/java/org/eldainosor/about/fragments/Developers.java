@@ -14,19 +14,25 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.activities;
+package org.eldainosor.about.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-public class LauncherActivity extends AppCompatActivity {
+import org.eldainosor.about.helpers.Downloader;
+import org.eldainosor.about.helpers.Util;
+
+import java.util.List;
+
+import retrofit2.Call;
+
+public class Developers extends org.eldainosor.about.abstracts.Developers {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Intent launch = new Intent(this, MainActivity.class);
-        startActivity(launch);
-        finish();
+    public Call<List<Util>> getDevsCall() {
+        return Downloader.getDevsApi().getDevs();
+    }
+
+    @Override
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     }
 }

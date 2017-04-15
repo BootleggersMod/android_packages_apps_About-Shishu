@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.helpers;
+package org.eldainosor.about.helpers;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -24,7 +24,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dirtyunicorns.about.R;
+import org.eldainosor.about.R;
 
 public class GridLayout extends ViewGroup {
 

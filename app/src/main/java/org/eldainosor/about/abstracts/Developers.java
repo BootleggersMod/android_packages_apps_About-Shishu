@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.dirtyunicorns.about.abstracts;
+package org.eldainosor.about.abstracts;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -26,8 +27,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dirtyunicorns.about.R;
-import com.dirtyunicorns.about.helpers.Util;
+import org.eldainosor.about.activities.SocialActivity;
+import org.eldainosor.about.helpers.ClickUtils;
+import org.eldainosor.about.helpers.Util;
+import org.eldainosor.about.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,12 +39,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public abstract class Devices extends PreferenceFragmentCompat {
+public abstract class Developers extends PreferenceFragmentCompat implements ClickUtils.OnItemClickListener {
 
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     ArrayList<Util> list = new ArrayList<>();
-    com.dirtyunicorns.about.adapters.Devices adapter;
+    org.eldainosor.about.adapters.Developers adapter;
 
     @Nullable
     @Override
@@ -50,7 +53,8 @@ public abstract class Devices extends PreferenceFragmentCompat {
         View rootView = inflater.inflate(R.layout.recyclerview, container, false);
 
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler);
-        adapter = new com.dirtyunicorns.about.adapters.Devices(list);
+        ClickUtils.addTo(recyclerView).setOnItemClickListener(this);
+        adapter = new org.eldainosor.about.adapters.Developers(list);
 
         assert recyclerView != null;
         recyclerView.setAdapter(adapter);
@@ -65,7 +69,7 @@ public abstract class Devices extends PreferenceFragmentCompat {
         return rootView;
     }
 
-    public abstract Call<List<Util>> getDevicesCall();
+    public abstract Call<List<Util>> getDevsCall();
 
     public void downloadDevs() {
 
@@ -73,7 +77,7 @@ public abstract class Devices extends PreferenceFragmentCompat {
         adapter.notifyDataSetChanged();
         showRefresh();
 
-        getDevicesCall().enqueue(new Callback<List<Util>>() {
+        getDevsCall().enqueue(new Callback<java.util.List<Util>>() {
             @Override
             public void onResponse(Call<List<Util>> call, Response<List<Util>> response) {
 
@@ -125,5 +129,15 @@ public abstract class Devices extends PreferenceFragmentCompat {
                 downloadDevs();
             }
         });
+    }
+
+    @Override
+    public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+
+        Util uri = list.get(position);
+
+        Intent intent = new Intent(getActivity(), SocialActivity.class);
+        intent.putExtra("social", uri);
+        startActivity(intent);
     }
 }

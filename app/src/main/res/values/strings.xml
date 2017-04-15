@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name" translatable="false">DU About</string>
+    <string name="app_name" translatable="false">About Shishu</string>
     <string name="hide_app_icon">Hide app</string>
     <string name="info">Info</string>
     <string name="no_connection">Can not access without a internet connection.</string>
@@ -27,6 +27,12 @@
     <string name="google_plus_link" translatable="false">https://plus.google.com/u/0/communities/109738128866939227235</string>
     <string name="twitter_link" translatable="false">https://twitter.com/_DirtyUnicorns_</string>
     <string name="github_link" translatable="false">https://github.com/DirtyUnicorns</string>
+    <string name="headl_link" translatable="false">https://github.com/DirtyUnicorns</string>
+    <string name="song_link" translatable="false">https://github.com/DirtyUnicorns</string>
+    <string name="spotify_link" translatable="false">https://github.com/DirtyUnicorns</string>
+    <string name="telegram_link" translatable="false">https://github.com/DirtyUnicorns</string>
+    <string name="youtube_link" translatable="false">https://github.com/DirtyUnicorns</string>
+    <string name="wallpapers_link" translatable="false">https://github.com/DirtyUnicorns</string>
     <string name="no_contacts">No contact info found</string>
 
 </resources>
