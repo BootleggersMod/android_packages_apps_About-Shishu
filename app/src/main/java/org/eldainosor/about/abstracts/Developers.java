@@ -139,5 +139,6 @@ public abstract class Developers extends PreferenceFragmentCompat implements Cli
         Intent intent = new Intent(getActivity(), SocialActivity.class);
         intent.putExtra("social", uri);
         startActivity(intent);
+
     }
 }

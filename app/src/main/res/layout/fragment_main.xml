@@ -18,6 +18,12 @@
 
             <include layout="@layout/fragment_then_now" />
 
+            <include layout="@layout/social_layout"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20sp" />
+
         </LinearLayout>
 
     </ScrollView>

@@ -38,6 +38,8 @@ import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import static android.view.View.GONE;
+
 public class MainActivity extends AppCompatActivity {
 
     Drawer result = null;
@@ -93,11 +95,6 @@ public class MainActivity extends AppCompatActivity {
         if (result != null) {
             result.getActionBarDrawerToggle().setDrawerIndicatorEnabled(true);
         }
-
-        Fragment fragment = new GeneralInfo();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.fragment, fragment);
-        transaction.commit();
     }
 
     private void changeFragment(Fragment fragment) {

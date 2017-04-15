@@ -42,14 +42,6 @@ public class GeneralInfo extends PreferenceFragmentCompat {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
-        ImageView googleplus = (ImageView) rootView.findViewById(R.id.google_plus);
-        googleplus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent googleplus = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.google_plus_link)));
-                startActivity(googleplus);
-            }
-        });
         ImageView github = (ImageView) rootView.findViewById(R.id.github);
         github.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,52 +50,12 @@ public class GeneralInfo extends PreferenceFragmentCompat {
                 startActivity(github);
             }
         });
-        ImageView twitter = (ImageView) rootView.findViewById(R.id.twitter);
-        twitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent twitter = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.twitter_link)));
-                startActivity(twitter);
-            }
-        });
         ImageView headl = (ImageView) rootView.findViewById(R.id.headl);
         headl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent headl = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.headl_link)));
                 startActivity(headl);
-            }
-        });
-        ImageView song = (ImageView) rootView.findViewById(R.id.song);
-        song.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent song = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.song_link)));
-                startActivity(song);
-            }
-        });
-        ImageView spotify = (ImageView) rootView.findViewById(R.id.spotify);
-        spotify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent spotify = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.spotify_link)));
-                startActivity(spotify);
-            }
-        });
-        ImageView telegram = (ImageView) rootView.findViewById(R.id.telegram);
-        telegram.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent telegram = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.telegram_link)));
-                startActivity(telegram);
-            }
-        });
-        ImageView youtube = (ImageView) rootView.findViewById(R.id.youtube);
-        youtube.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent youtube = new Intent(Intent.ACTION_VIEW, Uri.parse(getResources().getString(R.string.youtube_link)));
-                startActivity(youtube);
             }
         });
         ImageView wallpapers = (ImageView) rootView.findViewById(R.id.wallpapers);
