@@ -70,4 +70,26 @@
         android:src="@drawable/wallpapers"
         android:layout_marginStart="20dp"
         android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/gplay"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/gplay"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/sourcecode"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/source"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+    <ImageView
+        android:id="@+id/ig"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ig"
+        android:layout_marginStart="20dp"
+        android:layout_margin="20dp" />
+
 </LinearLayout>

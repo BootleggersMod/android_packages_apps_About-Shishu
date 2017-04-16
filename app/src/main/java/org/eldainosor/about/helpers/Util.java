@@ -51,7 +51,12 @@ public class Util implements Serializable {
     private String youtube = null;
     @SerializedName("wallpapers")
     private String wallpapers = null;
-
+    @SerializedName("gplay")
+    private String gplay = null;
+    @SerializedName("sourcecode")
+    private String sourcecode = null;
+    @SerializedName("ig")
+    private String ig = null;
     private Util uri;
 
 
@@ -97,6 +102,13 @@ public class Util implements Serializable {
     }
     public String getWallpapers() {
         return wallpapers;
+    }
+    public String getGPlay() {
+        return gplay;
+    }
+    public String getSourceCode() { return sourcecode;  }
+    public String getIG() {
+        return ig;
     }
 
     public Util(Util uri) {

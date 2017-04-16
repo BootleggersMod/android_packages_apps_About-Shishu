@@ -1,20 +1,20 @@
 <resources>
 
     <string name="app_name" translatable="false">About Shishu</string>
-    <string name="hide_app_icon">Hide app</string>
+    <string name="hide_app_icon">Esconder App</string>
     <string name="info">Info</string>
-    <string name="no_connection">Can not access without a internet connection.</string>
+    <string name="no_connection">No se puede acceder sin conexión a Internet.</string>
     <string name="general_info_title">Acerca de Shishu Builds</string>
     <string name="developers_title">Gracias</string>
     <string name="in_beginning_title">Explicación breve</string>
     <string name="in_beginning__content">Las shishu builds están hechas por ElDainosor, con el simple fin de poder sacar el teléfono
-    del bolsillo y decir \'Bueno, si necesito tal aplicación la puedo usar con gusto.\' y así construir un sistema sin apps que
+    del bolsillo y decir \'Bueno, si necesito tal aplicación la puedo usar con gusto.\' y así construir un sistema con apps que
     no solo sean necesarias. Sino que sean útiles. Sé que hay devs afuera esforzandose para hacer funcionar una app, pero bueno. El
     usuario tiene el derecho a armar el sistema a su gusto, y asi fue dándose. Al punto que les di una identidad que sea simple,
-    pegadiza y sólida. Aunque bueno, cada usuario puede tener su experiencia y reformar mi experiencia acorde a sus comodidades.\n\n
+    pegadiza y sólida. Aunque bueno, cada usuario puede tener su experiencia y reformar la mía acorde a sus comodidades.\n\n
     Se reemplazan/añaden apps de galería, navegador, música, visor de archivos, cámara y alarma con alternativas nuevas o útiles, como
     la cámara y galería de HTC, dandole nuevas oportunidades a Reproductores como MyPlayer, Auracle, Timber y RetroPlayer, disfrutando
-    de aplicaciones hecha por la misma comunidad, como en el caso de OmniClock, etcétera.</string>
+    de aplicaciones hechas por la misma comunidad, como en el caso de OmniClock, etcétera.</string>
 
     <string name="then_now_title">Agradecimientos</string>
     <string name="then_now_content">Primero de todo: Gracias a shishu, quien siempre me dió animos y siempre estuvo, Gracias al Grupo

@@ -45,6 +45,9 @@ public class SocialActivity extends AppCompatActivity {
         ImageView telegram = (ImageView) findViewById(R.id.telegram);
         ImageView youtube = (ImageView) findViewById(R.id.youtube);
         ImageView wallpapers = (ImageView) findViewById(R.id.wallpapers);
+        ImageView gplay = (ImageView) findViewById(R.id.gplay);
+        ImageView sourcecode = (ImageView) findViewById(R.id.sourcecode);
+        ImageView ig = (ImageView) findViewById(R.id.ig);
 
         googleplus.setVisibility(uri.getGooglePlus().equals("") ? View.GONE : View.VISIBLE);
         github.setVisibility(uri.getGithub().equals("") ? View.GONE : View.VISIBLE);
@@ -55,8 +58,14 @@ public class SocialActivity extends AppCompatActivity {
         telegram.setVisibility(uri.getTelegram().equals("") ? View.GONE : View.VISIBLE);
         youtube.setVisibility(uri.getYoutube().equals("") ? View.GONE : View.VISIBLE);
         wallpapers.setVisibility(uri.getWallpapers().equals("") ? View.GONE : View.VISIBLE);
+        gplay.setVisibility(uri.getGPlay().equals("") ? View.GONE : View.VISIBLE);
+        sourcecode.setVisibility(uri.getSourceCode().equals("") ? View.GONE : View.VISIBLE);
+        ig.setVisibility(uri.getIG().equals("") ? View.GONE : View.VISIBLE);
 
-        if (uri.getGooglePlus().equals("") && uri.getTwitter().equals("") && uri.getGithub().equals("")) {
+        if (uri.getGooglePlus().equals("") && uri.getTwitter().equals("") && uri.getGithub().equals("")
+             && uri.getHeaDL().equals("") && uri.getSong().equals("") && uri.getSpotify().equals("")
+             && uri.getTelegram().equals("") && uri.getYoutube().equals("") && uri.getWallpapers().equals("")
+             && uri.getGPlay().equals("") && uri.getSourceCode().equals("") && uri.getIG().equals("")) {
             setContentView(R.layout.no_contact);
         }
 
@@ -114,6 +123,24 @@ public class SocialActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent wallpapersIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri.getWallpapers()));
                 startActivity(wallpapersIntent);
+            }
+        });
+        gplay.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent gplayIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri.getGPlay()));
+                startActivity(gplayIntent);
+            }
+        });
+        sourcecode.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent sourcecodeIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri.getSourceCode()));
+                startActivity(sourcecodeIntent);
+            }
+        });
+        ig.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent igIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri.getIG()));
+                startActivity(igIntent);
             }
         });
 
